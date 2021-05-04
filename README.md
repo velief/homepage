@@ -21,7 +21,5 @@ firebase login
 
 4. 배포
 ```
-*베리프, 경준, 성현 계정에 권한 있음 필요 시 문의
-
 firebase deploy
 ```
