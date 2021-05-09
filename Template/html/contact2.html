@@ -48,6 +48,14 @@
   <!-- ANIMATE -->
   <link rel='stylesheet' href="css/animate.min.css">
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/integration
+      emailjs.init('user_crFzsLdurOHkUHdm3h0SQ');
+    })();
+  </script>
+
   <!-- IE Warning CSS -->
   <!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie-warning.css" ><![endif]-->
   <!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie8-fix.css" ><![endif]-->
@@ -242,56 +250,41 @@
 
                 <!-- CONTACT FORM -->
                 <div>
-                  <form id="contact-form" action="php/contact-form.php" method="POST">
+                  <form id="contact-form" method="POST">
 
                     <div class="row">
                       <div class="col-md-12 mb-30">
                         <!-- <label>Your name *</label> -->
-                        <input type="text" value="" data-msg-required="Please enter your name" maxlength="100"
-                          class="controled" name="name" id="name" placeholder="이름" required>
+                        <input type="text" value="" data-msg-required="이름을 입려하세요" maxlength="100" class="controled"
+                          name="userName" id="userName" placeholder="이름" required>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-md-12 mb-30">
                         <!-- <label>Your email address *</label> -->
-                        <input type="email" value="" data-msg-required="Please enter your email address"
+                        <input type="email" value="" data-msg-required="이메일을 입력하세요"
                           data-msg-email="Please enter a valid email address" maxlength="100" class="controled"
-                          name="email" id="email" placeholder="이메일" required>
+                          name="reply_to" id="reply_to" placeholder="이메일" required>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-md-12 mb-40">
                         <!-- <label>Message *</label> -->
-                        <textarea maxlength="5000" data-msg-required="Please enter your message" rows="3"
-                          class="controled" name="message" id="message" placeholder="메시지" required></textarea>
+                        <textarea maxlength="5000" data-msg-required="메시지를 입력하세요" rows="3" class="controled" name="msg"
+                          id="msg" placeholder="메시지" required></textarea>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-md-12 text-center-xxs">
                         <input type="submit" value="SEND MESSAGE" class="button medium gray"
-                          data-loading-text="Loading...">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="checkbox small">
-                          <label><input type="checkbox" value="privacy" data-msg-required="Please accept the terms"
-                              id="agree" name="agree" class="checkbox" required>서비스 약관에 동의 합니다</label>
-                        </div>
+                          onclick="sendEmail()">
                       </div>
                     </div>
 
                   </form>
-                  <div class="alert alert-success hidden animated fadeIn" id="contactSuccess">
-                    Thanks, your message has been sent to us.
-                  </div>
-
-                  <div class="alert alert-danger hidden animated shake" id="contactError">
-                    <strong>Error!</strong> There was an error sending your message.
-                  </div>
                 </div>
               </div>
             </div>
@@ -379,6 +372,42 @@
 
   <!-- MAIN SCRIPT -->
   <script src="js/main.js"></script>
+
+  <script>
+    'use strict'
+    function sendEmail() {
+
+      var form = document.querySelector('form');
+      var userName = form.children[0].children[0].children[0].value;
+      var reply_to = form.children[1].children[0].children[0].value;
+      var msg = form.children[2].children[0].children[0].value;
+
+      if (userName === '') {
+        alert('이름을 입력하세요');
+        return;
+      }
+      else if (reply_to === '') {
+        alert('이메일을 입력하세요');
+        return;
+      }
+      else if (msg === '') {
+        alert('메시지를 입력하세요');
+        return;
+      }
+
+      emailjs.send("service_fyok8jb", "lendingPage", {
+        userName: userName,
+        reply_to: reply_to,
+        msg: msg,
+      })
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('메일이 발송되었습니다.');
+        }, function (error) {
+          console.log('FAILED...', error);
+        });
+    }
+  </script>
 
   <!-- JS end -->
 
