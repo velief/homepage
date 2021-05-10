@@ -3712,8 +3712,9 @@ background:none;
   padding-top:136px;
 }
 .header-wrapper{
+  background:#fff;
 	position: relative; 
-	width:100%;	
+  width:100%;	
 	-webkit-transition: height .3s ease 0s, background .3s ease 0s;	
 	-o-transition: height .3s ease 0s, background .3s ease 0s;	
 	transition: height .3s ease 0s, background .3s ease 0s;
@@ -3747,14 +3748,14 @@ background:none;
 	background: #303236;
 }
 #nav-below.header {
-	position:relative;
+  position:relative;
 }
 .is-sticky .header {
 	-webkit-box-shadow: 0 1px 15px rgba(0,0,0, .15);
 	box-shadow: 0 1px 15px rgba(0,0,0, .15);
 } 
 .header .container-m-30 {
-	position: relative;
+  position: relative;
 }
 .header-no-bg, .header-no-bg .header-wrapper {
 	background: none;
@@ -3768,7 +3769,7 @@ background:none;
 	margin-right: auto;
 	margin-left: auto;
 	position:relative;
-	width:100%;
+  width:100%;
 }
 
 @media (min-width: 1025px) {
@@ -8045,7 +8046,7 @@ h2.portfolio-timeline-title {
   #main-menu .navbar .nav .open-sub:before {
     content: "\e232";
     font-size: 20px;
-    font-family:  'NotoSansKR-Bold'
+    font-family:  'NotoSansKR-Bold';
     color:#d3d3d3;
     padding-top: 15px;
     right: 14px;
@@ -9419,7 +9420,7 @@ img.mfp-img {
     display: none;
     position: relative;
     margin: 0;
-    padding: 0;#header-left 
+    padding: 0;
     background: #3e4045;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -9489,7 +9490,7 @@ img.mfp-img {
   #header-left #main-menu .navbar .nav .open-sub:before {
     content: "\e232";
     font-size: 20px;
-    font-family:  'NotoSansKR-Bold'
+    font-family:  'NotoSansKR-Bold';
     color: #d3d3d3;
     padding-top: 15px;
     right: 14px;
@@ -10429,7 +10430,7 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 .fs-parent .open-sub:before {
   content: "\e232";
   font-size: 18px;
-  font-family:  'NotoSansKR-Bold'
+  font-family:  'NotoSansKR-Bold';
   right: 0;
   position: absolute;
   font-style: normal !important;
