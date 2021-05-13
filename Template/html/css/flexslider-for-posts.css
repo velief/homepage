@@ -24,7 +24,7 @@
 *********************************/
 /* Font-face Icons */
 @font-face {
-	font-family:  'NotoSansKR-Bold';
+	font-family:  'SCDream3' !important;
 	src:url('fonts/flexslider-icon.eot');
 	src:url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'),
 		url('fonts/flexslider-icon.woff') format('woff'),
