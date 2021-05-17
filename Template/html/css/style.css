@@ -8044,7 +8044,6 @@ h2.portfolio-timeline-title {
     width: 100%;
   }
   #main-menu .navbar .nav .open-sub:before {
-    content: "\e232";
     font-size: 20px;
     font-family:  'SCDream3' !important;
     color:#d3d3d3;
@@ -8063,15 +8062,6 @@ h2.portfolio-timeline-title {
   #main-menu .navbar .nav .current .open-sub:before {
     color:#fff;
   }
-  #main-menu .navbar .nav .active .open-sub:before {
-    content: "\e200";
-  }
-  #main-menu .navbar .nav .active .sub .open-sub:before {
-    content: "\e232";
-  } 
-  #main-menu .navbar .nav .active .sub  .active .open-sub:before {
-    content: "\e200";
-  } 
   #main-menu .navbar .nav > li.parent:hover > a:after {
     display: none;
   }
